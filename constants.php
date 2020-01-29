@@ -4,10 +4,10 @@
 *   Configurable Constants
 */
 
-define('CONSUMER_KEY', 'dj0yJmk9dWVMT3V2MU9SZGUzJmQ9WVdrOVJIWklVM3BMTXpBbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWVm');
-define('CONSUMER_SECRET', '42e262e98287f3fca465fa227b2344d62a140971');
-define('LEAGUE_KEY', 'nba.l.128774');
-define('TEAM_ID', '4');
+define('CONSUMER_KEY', '');
+define('CONSUMER_SECRET', '');
+define('LEAGUE_KEY', '');
+define('TEAM_ID', '');
 define('FREE_AGENTS_MAX', 50);
 static $scored_stats = [
     '12' => 1,      //PTS
