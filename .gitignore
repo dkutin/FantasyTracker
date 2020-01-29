@@ -6,5 +6,7 @@ tmp/
 tmp/auth/
 tmp/data/
 tmp/data/players/
-test.php
+tmp/data/players/FA/
+tmp/data/players/Roster/
 constants.php
+
