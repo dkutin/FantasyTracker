@@ -5,9 +5,9 @@ include_once('FantasyAPI.php');
 include_once('helper.php');
 
 /**
- * Class serviceCall
+ * Class ServiceCall
  */
-class serviceCall
+class ServiceCall
 {
     /**
      * @var FantasyAPI
@@ -19,7 +19,7 @@ class serviceCall
     private $week;
 
     /**
-     * serviceCall constructor.
+     * ServiceCall constructor.
      */
     function __construct()
     {
@@ -77,7 +77,7 @@ class serviceCall
      */
     function getPlayerStats($player_key, $type) {
         $week = $this->week;
-        $player = "https://fantasysports.yahooapis.com/fantasy/v2/player/395.p.${player_key}/stats";
+        $player = "https://fantasysports.yahooapis.com/fantasy/v2/player/395.p.${player_key}/stats;week=17";
         $answer = $this->api->makeAPIRequest($player);
         writeToFile(json_encode($answer), "tmp/data/players/${type}/player_${player_key}_week_${week}.json");
         return $answer;
@@ -100,5 +100,4 @@ class serviceCall
             $this->getPlayerStats($player['player_id'], 'Roster');
         }
     }
-
 }
