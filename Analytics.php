@@ -77,7 +77,7 @@ class Analytics
             $files = glob("tmp/data/players/${type}/player_${player}_week_*.json", GLOB_BRACE);
             if (count($files) < 2) {
                 print "Not enough data given for player ${player}!";
-                return FALSE;
+                return [];
             }
         }
 

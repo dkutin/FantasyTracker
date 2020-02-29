@@ -5,9 +5,9 @@ include_once('FantasyAPI.php');
 include_once('helper.php');
 
 /**
- * Class ServiceCall
+ * Class serviceCall
  */
-class ServiceCall
+class serviceCall
 {
     /**
      * @var FantasyAPI
@@ -19,7 +19,7 @@ class ServiceCall
     private $week;
 
     /**
-     * ServiceCall constructor.
+     * serviceCall constructor.
      */
     function __construct()
     {
