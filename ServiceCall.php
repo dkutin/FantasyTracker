@@ -77,7 +77,7 @@ class ServiceCall
      */
     function getPlayerStats($player_key, $type) {
         $week = $this->week;
-        $player = "https://fantasysports.yahooapis.com/fantasy/v2/player/395.p.${player_key}/stats;week=17";
+        $player = "https://fantasysports.yahooapis.com/fantasy/v2/player/395.p.${player_key}/stats";
         $answer = $this->api->makeAPIRequest($player);
         writeToFile(json_encode($answer), "tmp/data/players/${type}/player_${player_key}_week_${week}.json");
         return $answer;
