@@ -5,9 +5,9 @@ include_once('FantasyAPI.php');
 include_once('helper.php');
 
 /**
- * Class serviceCall
+ * Class ServiceCall
  */
-class serviceCall
+class ServiceCall
 {
     /**
      * @var FantasyAPI
@@ -19,7 +19,7 @@ class serviceCall
     private $week;
 
     /**
-     * serviceCall constructor.
+     * ServiceCall constructor.
      */
     function __construct()
     {
@@ -100,5 +100,4 @@ class serviceCall
             $this->getPlayerStats($player['player_id'], 'Roster');
         }
     }
-
 }

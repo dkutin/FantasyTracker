@@ -3,7 +3,7 @@ include('ServiceCall.php');
 include ('Analytics.php');
 
 // Initialize Objects needed to generate report
-$request = new serviceCall();
+$request = new ServiceCall();
 $analysis = new Analytics();
 
 // deleteAllFromFolder();
