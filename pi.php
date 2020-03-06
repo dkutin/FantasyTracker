@@ -1,6 +1,6 @@
 <?php
 
-include('ServiceCall.php');
+include(__DIR__ . '/ServiceCall.php');
 
 $request = new ServiceCall();
 
