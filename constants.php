@@ -30,4 +30,8 @@ define('TMP_AUTH_DIR', __DIR__ . '/tmp/auth/');
 define('TMP_DATA_DIR', __DIR__ . '/tmp/data/');
 define('TMP_DATA_PLAYERS_DIR', __DIR__ . '/tmp/data/players/');
 
+// Define Stat Types
+define('ONE_WEEK_AVG', 1);
+define('TWO_WEEK_AVG', 2);
+define('ONE_MO_AVG', 4);
 
