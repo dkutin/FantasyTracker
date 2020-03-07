@@ -1,7 +1,7 @@
 <?php
 
-include_once('constants.php');
-include_once('helper.php');
+include_once(__DIR__ . '/constants.php');
+include_once(__DIR__ . '/helper.php');
 
 /**
  * Class FantasyAPI
@@ -23,7 +23,7 @@ class FantasyAPI
      */
     function __construct()
     {
-        $this->auth_json_file = 'tmp/auth/auth_credentials_' . CONSUMER_KEY . '.json';
+        $this->auth_json_file = TMP_AUTH_DIR . 'auth_credentials_' . CONSUMER_KEY . '.json';
         if (file_exists($this->auth_json_file)) {
             $this->credentials = json_decode(file_get_contents($this->auth_json_file), TRUE);
         } else {
@@ -49,7 +49,7 @@ class FantasyAPI
                 'Accept-Language: en-US,en;q=0.5',
                 'Cache-Control: no-cache',
                 'Content-Type: application/x-www-form-urlencoded; charset=utf-8',
-                'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36'),
+            ),
         ));
         $resp = curl_exec($ch);
         curl_close($ch);
@@ -99,7 +99,7 @@ class FantasyAPI
             CURLOPT_HTTPHEADER => array(
                 'Authorization: Basic ' . base64_encode(CONSUMER_KEY . ":" . CONSUMER_SECRET),
                 'Content-Type: application/x-www-form-urlencoded',
-                'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36'),
+            ),
             CURLOPT_POSTFIELDS => http_build_query($post_values)
         ));
         $resp = curl_exec($ch);
@@ -132,7 +132,7 @@ class FantasyAPI
             CURLOPT_HTTPHEADER => array(
                 'Authorization: Basic ' . base64_encode(CONSUMER_KEY . ":" . CONSUMER_SECRET),
                 'Content-Type: application/x-www-form-urlencoded',
-                'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36'),
+            ),
             CURLOPT_POSTFIELDS => http_build_query($post_values)
         ));
         $resp = curl_exec($ch);

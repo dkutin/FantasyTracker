@@ -1,6 +1,6 @@
 <?php
-include('ServiceCall.php');
-include ('Analytics.php');
+include (__DIR__ . '/ServiceCall.php');
+include (__DIR__ . '/Analytics.php');
 
 // Initialize Objects needed to generate report
 $request = new ServiceCall();

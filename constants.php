@@ -21,6 +21,13 @@ static $scored_stats = [
 /*
  *  Non-Configurable Constants
  */
-
 define('AUTH_ENDPOINT', 'https://api.login.yahoo.com/oauth2/get_token');
+
+// Define Directories for referencing
+define('BIN_DIR', __DIR__ . '/bin/');
+define('TMP_DIR', __DIR__ . '/tmp/');
+define('TMP_AUTH_DIR', __DIR__ . '/tmp/auth/');
+define('TMP_DATA_DIR', __DIR__ . '/tmp/data/');
+define('TMP_DATA_PLAYERS_DIR', __DIR__ . '/tmp/data/players/');
+
 

@@ -1,8 +1,8 @@
 <?php
 
-include_once('constants.php');
-include_once('ServiceCall.php');
-include_once('helper.php');
+include_once(__DIR__ . 'constants.php');
+include_once(__DIR__ . 'ServiceCall.php');
+include_once(__DIR__ . 'helper.php');
 
 /**
  * Class Analytics
@@ -14,13 +14,13 @@ class Analytics
      */
     function __construct()
     {
-        if (file_exists('tmp/data/' . LEAGUE_KEY . '_free_agents.json') && file_exists('tmp/data/' . LEAGUE_KEY . '_my_team.json')) {
+        if (file_exists(TMP_DATA_DIR . LEAGUE_KEY . '_free_agents.json') && file_exists(TMP_DATA_DIR . LEAGUE_KEY . '_my_team.json')) {
             // TODO: Remove team and free agent files from temp/ every time a new Analytics object is made ...
             //deleteAllFromFolder('tmp/data/*.json');
-            $roster = getContents('tmp/data/' . LEAGUE_KEY . '_my_team.json');
-            $free_agents = getContents('tmp/data/' . LEAGUE_KEY . '_free_agents.json');
-            writeToFile(json_encode($roster['team']['roster']['players']), 'bin/team_' . TEAM_ID . '_roster.json');
-            writeToFile(json_encode($free_agents['league']['players']), 'bin/free_agents.json');
+            $roster = getContents(TMP_DATA_DIR . LEAGUE_KEY . '_my_team.json');
+            $free_agents = getContents(TMP_DATA_DIR . LEAGUE_KEY . '_free_agents.json');
+            writeToFile(json_encode($roster['team']['roster']['players']), BIN_DIR . 'team_' . TEAM_ID . '_roster.json');
+            writeToFile(json_encode($free_agents['league']['players']), BIN_DIR . 'free_agents.json');
         }
         return $this;
     }
@@ -59,7 +59,7 @@ class Analytics
                 }
             }
         }
-        writeToFile(json_encode($player_weight), 'bin/analysis_' . time() . '.json');
+        writeToFile(json_encode($player_weight), BIN_DIR . 'analysis_' . time() . '.json');
         return $data;
 
     }
@@ -72,9 +72,9 @@ class Analytics
     function createPlayerStats($type, $player = '') {
         // If we've specified a player, get their weekly stats (if available)
         if (empty($player)) {
-            $files = glob("tmp/data/players/${type}/*.json", GLOB_BRACE);
+            $files = glob(TMP_DATA_PLAYERS_DIR . "${type}/*.json", GLOB_BRACE);
         } else {
-            $files = glob("tmp/data/players/${type}/player_${player}_week_*.json", GLOB_BRACE);
+            $files = glob(TMP_DATA_PLAYERS_DIR . "${type}/player_${player}_week_*.json", GLOB_BRACE);
             if (count($files) < 2) {
                 print "Not enough data given for player ${player}!";
                 return [];
