@@ -79,7 +79,7 @@ class ServiceCall
         $week = $this->week;
         $player = "https://fantasysports.yahooapis.com/fantasy/v2/player/395.p.${player_key}/stats";
         $answer = $this->api->makeAPIRequest($player);
-        writeToFile(json_encode($answer), TMP_DATA_PLAYERS_DIR . "/${type}/player_${player_key}_week_${week}.json");
+        writeToFile(json_encode($answer), TMP_DATA_PLAYERS_DIR . "${type}/player_${player_key}_week_${week}.json");
         return $answer;
     }
 
