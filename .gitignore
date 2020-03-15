@@ -7,3 +7,4 @@ tmp/auth/
 tmp/data/
 tmp/data/players/
 constants.php
+*.tar.gz
