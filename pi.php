@@ -16,5 +16,5 @@ $data = $analytics->generateReport();
 
 // Initialize mailer credentials and send email from generated CSV
 $mailer->initializeMail();
-$status = $mailer->sendEmail('dmitrykutin@outlook.com', $data);
+$status = $mailer->sendEmail('', $data);
 
