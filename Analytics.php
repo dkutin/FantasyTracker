@@ -1,8 +1,8 @@
 <?php
 
-include_once(__DIR__ . '/constants.php');
-include_once(__DIR__ . '/ServiceCall.php');
-include_once(__DIR__ . '/helper.php');
+include_once (__DIR__ . '/constants.php');
+include_once (__DIR__ . '/ServiceCall.php');
+include_once (__DIR__ . '/helper.php');
 
 /**
  * Class Analytics
@@ -142,12 +142,13 @@ class Analytics
         $data = '';
         foreach ($suggestions as $r_player => $fa_players) {
             arsort($fa_players);
-            $data .= "$r_player can be replaced by: " . PHP_EOL;
+            $data .= "<div><p><b>$r_player can be replaced by: </b><br/>";
             foreach ($fa_players as $fa_player => $diff) {
-                $data .= "\t $fa_player: $diff" . PHP_EOL;
+                $data .= "<div>&emsp;&emsp;$fa_player: $diff </div><br/>";
             }
-            $data .= PHP_EOL;
+            $data .= "</p></div></br>";
         }
         writeToFile($data, BIN_DIR . 'analysis.csv');
+        return $data;
     }
 }

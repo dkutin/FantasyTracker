@@ -8,6 +8,8 @@ define('CONSUMER_KEY', '');
 define('CONSUMER_SECRET', '');
 define('LEAGUE_KEY', '');
 define('TEAM_ID', '');
+define('FANTASY_TRACKER_EMAIL', '');
+define('FANTASY_TRACKER_PASSWORD', '');
 define('FREE_AGENTS_MAX', 50);
 static $scored_stats = [
     '12' => 1,      //PTS
